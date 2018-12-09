@@ -1,3 +1,4 @@
+import { Server } from "net";
 import * as $protobuf from "protobufjs";
 /** Namespace abci. */
 export namespace abci {
@@ -7790,3 +7791,19 @@ export namespace common {
         public toJSON(): { [k: string]: any };
     }
 }
+
+export interface Handler{
+    echo?: (request: abci.IRequestEcho) => abci.IResponseEcho
+    flush?: (request: abci.IRequestFlush) => abci.IResponseFlush
+    info?: (request: abci.IRequestInfo) => abci.IResponseInfo
+    setOption?: (request: abci.IRequestSetOption) => abci.IResponseSetOption
+    initChain?: (request: abci.IRequestInitChain) => abci.IResponseInitChain
+    query?: (request: abci.IRequestQuery) => abci.IResponseQuery
+    beginBlock?: (request: abci.IRequestBeginBlock) => abci.IResponseBeginBlock
+    checkTx?: (request: abci.IRequestCheckTx) => abci.IResponseCheckTx
+    deliverTx?: (request: abci.IRequestDeliverTx) => abci.IResponseDeliverTx
+    endBlock?: (request: abci.IRequestEndBlock) => abci.IResponseEndBlock
+    commit?: (request: abci.IRequestCommit) => abci.IResponseCommit
+}
+
+export function createServer(handler: Handler): Server
