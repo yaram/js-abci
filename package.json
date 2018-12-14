@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "standard src/*.js test/*.js && nyc ava test/connection.js test/server.js test/integration.js",
-    "build": "pbjs -t static-module -w commonjs -o types.js proto/*.proto && pbts -o index.d.ts types.js"
+    "install": "pbjs -t static-module -w commonjs -o types.js proto/abci.proto && pbts -o types.d.ts types.js"
   },
   "keywords": [
     "abci",
@@ -27,7 +27,7 @@
     "nyc": "^13.1.0",
     "standard": "^11.0.1",
     "tempy": "^0.2.1",
-    "tendermint-node": "^3.4.0"
+    "tendermint-node": "github:yaram/tendermint-node#16518482044aec3a998ce785dcf4fb6ed03bae62"
   },
   "directories": {
     "example": "example",

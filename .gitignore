@@ -1,2 +1,4 @@
 node_modules
 .nyc_output
+types.js
+types.d.ts

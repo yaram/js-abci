@@ -12,11 +12,12 @@ module.exports = {
     info: {
       data: 'test',
       version: '123',
+      appVersion: '321',
       lastBlockHeight: 0,
       lastBlockAppHash: Buffer.alloc(0)
     }
   },
-  infoResponseHex: '22220f0a0474657374120331323318002200',
+  infoResponseHex: '2822120a0474657374120331323318c10220002a00',
   emptyInfoResponseHex: '042200',
   flushResponseHex: '041a00',
   echoResponseHex: '0e12050a03010203',
