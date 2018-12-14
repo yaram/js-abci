@@ -2,4 +2,3 @@ example
 test
 .nyc_output
 .travis.yml
-proto
